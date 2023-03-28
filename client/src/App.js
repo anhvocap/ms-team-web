@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import info from '../package.json';
 
 function App() {
   return (
@@ -8,6 +9,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <p>
+          Version: {info.version}
         </p>
         <a
           className="App-link"
