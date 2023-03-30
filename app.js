@@ -18,10 +18,10 @@ app.use(bodyParser.json());
 // setup app
 app.set('port', process.env.PORT || 3000);
 app.set('host', process.env.HOST || 'localhost');
-app.set('secretKey', process.env.SECRET_KEY || 'ms-app-web@2023');
+app.set('secretKey', process.env.SECRET_KEY || 'secret_key@2023');
 
 // setup api as /v1
-app.use('/v1/api', require('./routes/api'));
+app.use('/v1/api', require('./server/routes/api'));
 
 // setup web site
 const siteApp = path.join(__dirname, 'client/build');
