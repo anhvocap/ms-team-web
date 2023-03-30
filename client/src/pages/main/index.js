@@ -11,7 +11,7 @@ function Main() {
       console.log('- app:', microsoftTeams.app);
 
       // get current user
-      const context = await app.getContext();
+      const context = await microsoftTeams.app.getContext();
       console.log('- context:', context);
       let { user } = context;
       console.log('- user:', user.userPrincipalName);
