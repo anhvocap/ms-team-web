@@ -16,15 +16,20 @@ export const TabSsoTab = () => {
     const [error, setError] = useState<string>();
 
     useEffect(() => {
+        console.log('inTeams:', inTeams)
         if (inTeams === true) {
+            console.log('AAAA');
+            console.log('TAB_APP_URI:', 'api://75f2-171-252-155-217.ap.ngrok.io/2712d7dc-5bf8-4dfc-8a0c-b86f71b7c81d');
             authentication.getAuthToken({
-                resources: [process.env.TAB_APP_URI as string],
+                resources: ['api://75f2-171-252-155-217.ap.ngrok.io/2712d7dc-5bf8-4dfc-8a0c-b86f71b7c81d' as string],
                 silent: false
             } as authentication.AuthTokenRequestParameters).then(token => {
+                console.log('1111');
                 const decoded: { [key: string]: any; } = jwtDecode(token) as { [key: string]: any; };
                 setName(decoded!.name);
                 app.notifySuccess();
             }).catch(message => {
+                console.log('EEEE');
                 setError(message);
                 app.notifyFailure({
                     reason: app.FailedReason.AuthFailed,
