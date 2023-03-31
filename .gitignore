@@ -1,14 +1,44 @@
-# do not include the node modules in Git
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
 node_modules
+package-lock.json
 
-# do not include the package in Git
-package
+# testing
+/coverage
 
-# do not include the local environment files
+# misc
+.DS_Store
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# do not include the Connectors Json Db file
-connectors.json
+## prices repository
+# dependencies
+/client/node_modules
 
-# do not include dist files
-dist
+# testing
+/client/coverage
+
+# production
+/client/.netlify
+
+# misc
+/client/.DS_Store
+/client/.env.local
+/client/.env.development.local
+/client/.env.test.local
+/client/.env.production.local
+
+/client/npm-debug.log*
+/client/yarn-debug.log*
+/client/yarn-error.log*
