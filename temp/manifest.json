@@ -2,6 +2,7 @@
   "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.13/MicrosoftTeams.schema.json",
   "manifestVersion": "1.13",
   "id": "08ebb710-d075-11ed-b43d-d50156229a01",
+<<<<<<< HEAD
   "version": "1.0.1",
   "packageName": "com.cubeet.teamappprofile",
   "developer": {
@@ -9,6 +10,15 @@
     "websiteUrl": "https://3d28-2001-ee0-4fc3-6380-f4e4-3741-cc72-7b5f.ap.ngrok.io",
     "privacyUrl": "https://3d28-2001-ee0-4fc3-6380-f4e4-3741-cc72-7b5f.ap.ngrok.io/privacy.html",
     "termsOfUseUrl": "https://3d28-2001-ee0-4fc3-6380-f4e4-3741-cc72-7b5f.ap.ngrok.io/tou.html"
+=======
+  "version": "1.0.2",
+  "packageName": "com.cubeet.teamappprofile",
+  "developer": {
+    "name": "voduyanh",
+    "websiteUrl": "https://cubeet-team-profile.azurewebsites.net",
+    "privacyUrl": "https://cubeet-team-profile.azurewebsites.net/privacy.html",
+    "termsOfUseUrl": "https://cubeet-team-profile.azurewebsites.net/tou.html"
+>>>>>>> main2
   },
   "name": {
     "short": "team-app-profile",
@@ -25,7 +35,11 @@
   "accentColor": "#D85028",
   "configurableTabs": [
     {
+<<<<<<< HEAD
       "configurationUrl": "https://3d28-2001-ee0-4fc3-6380-f4e4-3741-cc72-7b5f.ap.ngrok.io/myWorkTab/config.html?name={loginHint}&tenant={tid}&group={groupId}&theme={theme}",
+=======
+      "configurationUrl": "https://cubeet-team-profile.azurewebsites.net/myWorkTab/config.html?name={loginHint}&tenant={tid}&group={groupId}&theme={theme}",
+>>>>>>> main2
       "canUpdateConfiguration": true,
       "scopes": [
         "team"
@@ -41,11 +55,19 @@
     "messageTeamMembers"
   ],
   "validDomains": [
+<<<<<<< HEAD
     "3d28-2001-ee0-4fc3-6380-f4e4-3741-cc72-7b5f.ap.ngrok.io"
+=======
+    "cubeet-team-profile.azurewebsites.net"
+>>>>>>> main2
   ],
   "showLoadingIndicator": false,
   "webApplicationInfo": {
     "id": "8b02bbc6-c80a-4c64-b8cf-dd8d8207b222",
+<<<<<<< HEAD
     "resource": "api://3d28-2001-ee0-4fc3-6380-f4e4-3741-cc72-7b5f.ap.ngrok.io/8b02bbc6-c80a-4c64-b8cf-dd8d8207b222"
+=======
+    "resource": "api://cubeet-team-profile.azurewebsites.net/8b02bbc6-c80a-4c64-b8cf-dd8d8207b222"
+>>>>>>> main2
   }
 }
