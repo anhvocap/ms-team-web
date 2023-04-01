@@ -1,9 +1,0 @@
-{
-  "generator-teams": {
-    "promptValues": {
-      "developer": "voduyanh"
-    },
-    "libraryName": "teamTabSso",
-    "generator-version": "4.1.0"
-  }
-}
