@@ -1,0 +1,9 @@
+{
+  "generator-teams": {
+    "promptValues": {
+      "developer": "voduyanh"
+    },
+    "libraryName": "teamAppProfile",
+    "generator-version": "4.1.0"
+  }
+}
