@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.13/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.13",
+  "id": "08ebb710-d075-11ed-b43d-d50156229a01",
+  "version": "1.0.1",
+  "packageName": "com.cubeet.teamappprofile",
+  "developer": {
+    "name": "voduyanh",
+    "websiteUrl": "https://3d28-2001-ee0-4fc3-6380-f4e4-3741-cc72-7b5f.ap.ngrok.io",
+    "privacyUrl": "https://3d28-2001-ee0-4fc3-6380-f4e4-3741-cc72-7b5f.ap.ngrok.io/privacy.html",
+    "termsOfUseUrl": "https://3d28-2001-ee0-4fc3-6380-f4e4-3741-cc72-7b5f.ap.ngrok.io/tou.html"
+  },
+  "name": {
+    "short": "team-app-profile",
+    "full": "team-app-profile"
+  },
+  "description": {
+    "short": "short description for Team App Profile",
+    "full": "full description Team App Profile"
+  },
+  "icons": {
+    "outline": "icon-outline.png",
+    "color": "icon-color.png"
+  },
+  "accentColor": "#D85028",
+  "configurableTabs": [
+    {
+      "configurationUrl": "https://3d28-2001-ee0-4fc3-6380-f4e4-3741-cc72-7b5f.ap.ngrok.io/myWorkTab/config.html?name={loginHint}&tenant={tid}&group={groupId}&theme={theme}",
+      "canUpdateConfiguration": true,
+      "scopes": [
+        "team"
+      ]
+    }
+  ],
+  "staticTabs": [],
+  "bots": [],
+  "connectors": [],
+  "composeExtensions": [],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": [
+    "3d28-2001-ee0-4fc3-6380-f4e4-3741-cc72-7b5f.ap.ngrok.io"
+  ],
+  "showLoadingIndicator": false,
+  "webApplicationInfo": {
+    "id": "8b02bbc6-c80a-4c64-b8cf-dd8d8207b222",
+    "resource": "api://3d28-2001-ee0-4fc3-6380-f4e4-3741-cc72-7b5f.ap.ngrok.io/8b02bbc6-c80a-4c64-b8cf-dd8d8207b222"
+  }
+}
