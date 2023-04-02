@@ -1,102 +1,93 @@
-# microsoft team app
-- App WorkForce Management
-- Node version = 18
-- Fluent UI version 9
-- hosting on azure: https://cubeet-work-dev.azurewebsites.net
+# team-app-profile - Microsoft Teams App
 
-### upgrade package.json to latest version
-- npm install -g npm-check-updates
-- ncu -u
-- npm install
+Generate a Microsoft Teams application.
 
-### FluentUI v9
-- github: https://github.com/microsoft/fluentui
-- npm: https://www.npmjs.com/package/@fluentui/react-components
-- https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/manage-teams-identity?pivots=programming-language-csharp
-- https://learn.microsoft.com/en-us/partner-center/marketplace/azure-ad-transactable-saas-landing-page
-- https://learn.microsoft.com/en-us/partner-center/marketplace/azure-ad-saas
+TODO: Add your documentation here
 
-### Learning Figma, Team UI Toolkit
-- https://learn.microsoft.com/en-us/fluent-ui/web-components/
-- https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/integrate-with-developer-portal
+## Getting started with Microsoft Teams Apps development
 
-### Develop Microsoft Team App
-- mstdd landing page
-- https://learn.microsoft.com/en-us/microsoftteams/platform/mstdd-landing
-- Authenticate users in Microsoft Teams
-- https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/authentication/authentication
-- Enable SSO for tab app
-- https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/authentication/tab-sso-overview
+Head on over to [Microsoft Teams official documentation](https://developer.microsoft.com/en-us/microsoft-teams) to learn how to build Microsoft Teams Tabs or the [Microsoft Teams Yeoman generator docs](https://github.com/PnP/generator-teams/docs) for details on how this solution is set up.
 
+## Project setup
 
-### Microsoft Identity Platform
-- Introduction to permissions and consent
-- https://learn.microsoft.com/en-gb/azure/active-directory/develop/permissions-consent-overview?WT.mc_id=Portal-Microsoft_AAD_RegisteredApps
-- Getting Started with Microsoft Identity
-- https://learn.microsoft.com/en-us/training/modules/getting-started-identity/?WT.mc_id=m365-16105-cxa
-- Microsoft identity platform and OAuth 2.0 authorization code flow
-- https://learn.microsoft.com/en-gb/azure/active-directory/develop/v2-oauth2-auth-code-flow
+All required source code are located in the `./src` folder:
 
-### Tutorial: Sign in users and call the Microsoft Graph API from a React single-page app (SPA) using auth code flow
-- https://learn.microsoft.com/en-us/azure/active-directory/develop/tutorial-v2-react
+* `client` client side code
+* `server` server side code
+* `public` static files for the web site
+* `manifest` for the Microsoft Teams app manifest
 
-### Learning Microsoft Graph API:
-- https://learn.microsoft.com/en-us/graph/?WT.mc_id=m365-16105-cxa
-- https://learn.microsoft.com/en-us/sharepoint/dev/solution-guidance/security-apponly-azuread
-- https://learn.microsoft.com/en-us/training/modules/msgraph-user-photo-information/3-exercise-access-user-profile-photo
-- https://github.com/MicrosoftDocs/mslearn-retrieve-m365-data-with-msgraph-quickstart
+For further details see the [Yo Teams documentation](https://github.com/PnP/generator-teams/docs)
 
+## Building the app
 
-### Microsoft Graph API explorer (using version 2.0)
-- Guide     :  https://learn.microsoft.com/en-us/graph/auth/auth-concepts
-- Preview   :  https://developer.microsoft.com/en-us/graph/graph-explorer
-- version 1 :  https://login.microsoftonline.com/${TENANT_ID}/oauth2/token
-- version 2 :  https://login.microsoftonline.com/${TENANT_ID}/oauth2/v2.0/token
+The application is built using the `build` Gulp task.
 
+``` bash
+npm i -g gulp-cli
+gulp build
+```
 
-### Setup app only access to SharePoint, there are two approaches:
-- Granting access via Azure AD App-Only
-- Granting access using SharePoint App-Only
-- https://learn.microsoft.com/en-us/sharepoint/dev/solution-guidance/security-apponly
-- https://learn.microsoft.com/en-us/sharepoint/dev/solution-guidance/security-apponly-azuread
-- https://learn.microsoft.com/en-us/sharepoint/dev/solution-guidance/security-apponly-azureacs
-- Watch Youtube:
-- https://www.youtube.com/watch?v=-wjlgxJIlWQ&ab_channel=MicrosoftReactor
-- https://www.youtube.com/watch?v=eizdN6XNyvw&ab_channel=MicrosoftReactor
+## Building the manifest
 
+To create the Microsoft Teams Apps manifest, run the `manifest` Gulp task. This will generate and validate the package and finally create the package (a zip file) in the `package` folder. The manifest will be validated against the schema and dynamically populated with values from the `.env` file.
 
-### Solution 1: App Registration via Azure AD App-Only
-### App Registration via Azure AD App-Only
-- run ps to generate self certificate with administrator: .\Create-SelfSignedCertificate.ps1 -CommonName "Cubeet" -StartDate 2023-01-01 -EndDate 2025-12-31
-- enter password for private key: cubeet&&&workforce@@@2023
-- login to Azure AD to register new application
-- Tenant ID          :  f055188a-0916-40fd-aeed-2ba499834c94
-- App Display Name   :  cubeet-api-access
-- Application ID     :  f50bebee-b729-43fd-b01b-a3da4bc77250
-- Client Credential  :  upload client certificate
-- Client Secret      :  api_query / 291a6566-6c15-40e4-84d1-22e64705227d / HKq8Q~2MDu42ARyeocQXzJzkvhUnLlf7cU46lcno
+``` bash
+gulp manifest
+```
 
-### Solution 2: App Registration using SharePoint App-Only principal
-- 1. Generate client id & client secret:
-- https://cubeetapp.sharepoint.com/sites/workforce/_layouts/15/appregnew.aspx
-The app identifier has been successfully created.
-Client Id      :  	bcd05d81-ecd7-4788-9360-3f6463319199
-Client Secret  :  	Kfz48uH9h+qFTcOzaVV8nYK6zZ1WeCK7ixsdBRmJRhk=
-Title          :  	Cubeet Workforce
-App Domain     :  	cubeet-work-dev.azurewebsites.net
-Redirect URI   :  	https://cubeet-work-dev.azurewebsites.net
+## Deploying the manifest
 
-- 2. Assign site collection permission
-- Tenant: https://cubeetapp-admin.sharepoint.com/_layouts/15/appinv.aspx
-- or Site Collection: https://cubeetapp.sharepoint.com/sites/workforce/_layouts/15/appinv.aspx
-<AppPermissionRequests AllowAppOnlyPolicy="true">
-   <AppPermissionRequest Scope="http://sharepoint/content/sitecollection" Right="FullControl"/>
-   <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="FullControl"/>
-</AppPermissionRequests>
+Using the `yoteams-deploy` plugin, automatically added to the project, deployment of the manifest to the Teams App store can be done manually using `gulp tenant:deploy` or by passing the `--publish` flag to any of the `serve` tasks.
 
-### Using Microsoft Graph API to access SharePoint Site Collection
-- https://learn.microsoft.com/en-us/graph/api/site-get?view=graph-rest-1.0&tabs=http
+## Configuration
 
-### using ngrok
-- https://ngrok.com/download
-- https://e7f8-2001-ee0-5002-2870-48da-4885-69e2-649d.ap.ngrok.io
+Configuration is stored in the `.env` file.
+
+## Debug and test locally
+
+To debug and test the solution locally you use the `serve` Gulp task. This will first build the app and then start a local web server on port 3007, where you can test your Tabs, Bots or other extensions. Also this command will rebuild the App if you change any file in the `/src` directory.
+
+``` bash
+gulp serve
+```
+
+To debug the code you can append the argument `debug` to the `serve` command as follows. This allows you to step through your code using your preferred code editor.
+
+``` bash
+gulp serve --debug
+```
+
+## Useful links
+
+* [Debugging with Visual Studio Code](https://github.com/pnp/generator-teams/blob/master/docs/docs/user-guide/vscode.md)
+* [Developing with ngrok](https://github.com/pnp/generator-teams/blob/master/docs/docs/concepts/ngrok.md)
+* [Developing with Github Codespaces](https://github.com/pnp/generator-teams/blob/master/docs/docs/user-guide/codespaces.md)
+
+## Additional build options
+
+You can use the following flags for the `serve`, `ngrok-serve` and build commands:
+
+* `--no-linting` or `-l` - skips the linting of Typescript during build to improve build times
+* `--debug` - builds in debug mode and significantly improves build time with support for hot reloading of client side components
+* `--env <filename>.env` - use an alternate set of environment files
+* `--publish` - automatically publish the application to the Teams App store
+
+## Deployment
+
+The solution can be deployed to Azure using any deployment method.
+
+* For Azure Devops see [How to deploy a Yo Teams generated project to Azure through Azure DevOps](https://www.wictorwilen.se/blog/deploying-yo-teams-and-node-apps/)
+* For Docker containers, see the included `Dockerfile`
+
+## Logging
+
+To enable logging for the solution you need to add `msteams` to the `DEBUG` environment variable. See the [debug package](https://www.npmjs.com/package/debug) for more information. By default this setting is turned on in the `.env` file.
+
+Example for Windows command line:
+
+``` bash
+SET DEBUG=msteams
+```
+
+If you are using Microsoft Azure to host your Microsoft Teams app, then you can add `DEBUG` as an Application Setting with the value of `msteams`.
