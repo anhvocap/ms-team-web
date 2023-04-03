@@ -10,6 +10,8 @@
         "ecmaVersion": 2018
     },
     "rules": {
+        "indent": "off",
+        "camelcase": "off",
         "no-process-env": "off"
     }
 }
