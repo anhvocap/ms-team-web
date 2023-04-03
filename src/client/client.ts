@@ -10,3 +10,4 @@ export const render = (type: any, element: HTMLElement) => {
 export * from "./myWorkTab/MyWorkTab";
 export * from "./myWorkTab/MyWorkTabConfig";
 export * from "./myWorkTab/MyWorkTabRemove";
+export * from "./myProfileTab/MyProfileTab";

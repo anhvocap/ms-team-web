@@ -2,3 +2,4 @@
 export const nonce = {}; // Do not remove!
 // Automatically added for the myWorkTab tab
 export * from "./myWorkTab/MyWorkTab";
+export * from "./myProfileTab/MyProfileTab";
