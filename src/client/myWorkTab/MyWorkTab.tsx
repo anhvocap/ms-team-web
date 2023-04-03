@@ -60,32 +60,32 @@ export const MyWorkTab = () => {
 
     const getRecentEmails = useCallback(async () => {
         if (!msGraphOboToken) { return; }
-      
+
         const endpoint = "https://graph.microsoft.com/v1.0/me/messages?$select=receivedDateTime,subject&$orderby=receivedDateTime&$top=10";
         const requestObject = {
-          method: "GET",
-          headers: {
-            Authorization: "Bearer " + msGraphOboToken
-          }
+            method: "GET",
+            headers: {
+                Authorization: "Bearer " + msGraphOboToken
+            }
         };
-      
+
         const response = await fetch(endpoint, requestObject);
         const responsePayload = await response.json();
-      
+
         if (response.ok) {
-          const recentMail = responsePayload.value.map((mail: any) => ({
-            key: mail.id,
-            header: mail.subject,
-            headerMedia: mail.receivedDateTime
-          }));
-          setRecentMail(recentMail);
+            const recentMail = responsePayload.value.map((mail: any) => ({
+                key: mail.id,
+                header: mail.subject,
+                headerMedia: mail.receivedDateTime
+            }));
+            setRecentMail(recentMail);
         }
     }, [msGraphOboToken]);
 
     useEffect(() => {
         // if the SSO token is defined...
         if (ssoToken && ssoToken.length > 0) {
-          exchangeSsoTokenForOboToken();
+            exchangeSsoTokenForOboToken();
         }
     }, [exchangeSsoTokenForOboToken, ssoToken]);
 
