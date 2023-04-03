@@ -1,9 +1,36 @@
 import * as React from "react";
 import { Provider, Flex, Text, Button, Header, List } from "@fluentui/react-northstar";
+import { makeStyles, Image, Title3, Body1Strong, Caption1 } from "@fluentui/react-components";
+import { provideFluentDesignSystem, fluentCard } from '@fluentui/web-components';
 import { useState, useEffect, useCallback } from "react";
 import { useTeams } from "msteams-react-base-component";
 import { app, authentication } from "@microsoft/teams-js";
 import jwtDecode from "jwt-decode";
+
+//const noImage = 'https://fabricweb.azureedge.net/fabric-website/assets/images/avatar/KatriAthokas.jpg';
+const noImage = 'https://aws-product-images.s3.amazonaws.com/employee/no-image.png';
+
+const useStyles = makeStyles({
+    root: {
+      display: "flex",
+      flexDirection: "column",
+      rowGap: "5px",
+      marginLeft: '25%',
+      marginRight: '25%',
+    },
+    boxInfo: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: 'center',
+    },
+    boxRequest: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: 'center',
+      minHeight: '50px',
+      marginTop: '20%',
+    },
+});
 
 /**
  * Implementation of the my work content page
@@ -13,6 +40,8 @@ export const MyProfileTab = () => {
     const [entityId, setEntityId] = useState<string | undefined>();
     const [name, setName] = useState<string>();
     const [error, setError] = useState<string>();
+
+    const styles = useStyles();
 
     useEffect(() => {
         if (inTeams === true) {
@@ -53,15 +82,19 @@ export const MyProfileTab = () => {
                     <Header content="My Profile" />
                 </Flex.Item>
                 <Flex.Item>
-                    <div>
-                        <div>
-                            <Text content={`Hello ${name}`} />
-                        </div>
-                        {error && <div><Text content={`An SSO error occurred ${error}`} /></div>}
-
-                        <div>
-                            <Button onClick={() => alert("Clicked Me")}>Click Me</Button>
-                        </div>
+                    <div className={styles.boxInfo}>
+                        <Image
+                            alt={'noImage'}
+                            shape="circular"
+                            src={noImage}
+                            height={240}
+                            width={240}
+                        />
+                        <Title3>abc</Title3>
+                        <Body1Strong>Welcome: abc</Body1Strong>
+                        <Body1Strong>Email: abc</Body1Strong>
+                        <Button>Profile Detail</Button>
+                        <Caption1>Go to Profile Detail</Caption1>
                     </div>
                 </Flex.Item>
                 <Flex.Item styles={{
