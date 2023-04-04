@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - cubeet-team-bot
+name: Build and deploy Node.js app to Azure Web App - cubeet-team-profile
 
 on:
   push:
@@ -54,7 +54,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'cubeet-team-bot'
+          app-name: 'cubeet-team-profile'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_425BAC8031904E6D854947C8981B43D1 }}
           package: .
