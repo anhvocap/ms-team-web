@@ -1,4 +1,4 @@
-# cubeet-team-profile
+# cubeet-team-bot
 - Node version = 18
 - Fluent UI version = 9
 
@@ -8,7 +8,7 @@ aio: "AVQAq/8TAAAA5NcEnoLbpCxqUlDi7q6bFxR3s/iqf5YFb8Vp7+16rnMGOeS0vwf2/4wM6nUlOG
 amr: (2) ['pwd', 'mfa']
 appid: "5e3ce6c0-2b1f-4285-8d4b-75ee78787346"
 appidacr: "0"
-aud: "api://cubeet-team-profile.azurewebsites.net/8b02bbc6-c80a-4c64-b8cf-dd8d8207b222"
+aud: "api://cubeet-team-bot.azurewebsites.net/8b02bbc6-c80a-4c64-b8cf-dd8d8207b222"
 exp: 1680370348
 family_name: "Vo"
 given_name: "Anh"
