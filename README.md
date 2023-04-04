@@ -1,5 +1,14 @@
 # teamappprofile - Microsoft Teams App
+- Node version = 18
+- Fluent UI version = 9
 
+- For running: don't forget to run ngrok
+- npm i
+- gulp manifest
+- gulp build
+- npm run start
+
+--------------------------------------
 Generate a Microsoft Teams application.
 
 TODO: Add your documentation here
