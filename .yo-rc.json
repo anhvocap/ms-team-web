@@ -1,0 +1,12 @@
+{
+  "generator-teams": {
+    "promptValues": {
+      "developer": "voduyanh",
+      "unitTestsEnabled": true,
+      "lintingSupport": true,
+      "useAzureAppInsights": false
+    },
+    "libraryName": "msTeamBot",
+    "generator-version": "4.1.0"
+  }
+}
