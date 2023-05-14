@@ -1,4 +1,4 @@
-# team-app-profile - Microsoft Teams App
+# Microsoft Teams App Bot
 
 Generate a Microsoft Teams application.
 
