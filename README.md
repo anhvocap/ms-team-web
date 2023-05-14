@@ -1,4 +1,4 @@
-# cubeet-team-app-bot - Microsoft Teams App
+# Microsoft Teams App Bot
 
 Generate a Microsoft Teams application.
 
