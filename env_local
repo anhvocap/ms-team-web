@@ -1,0 +1,35 @@
+# The public domain name of where you host your application
+PUBLIC_HOSTNAME=msteambot.azurewebsites.net
+
+# Id of the Microsoft Teams application
+APPLICATION_ID=4cbf3e20-d44f-11ed-bf8e-8745488006f0
+# Package name of the Microsoft Teams application
+PACKAGE_NAME=msteambot
+
+# App Id and App Password for the Bot Framework bot
+MICROSOFT_APP_ID=3922ee68-48b0-405d-8caf-9361078baa43
+MICROSOFT_APP_PASSWORD=-0ls8Q~YpQ7IUYQOGAyybFzqw3.WOQSzY6USE4aOV
+SSO_CONNECTION_NAME=CubeetTeamBotOAuthConnection
+
+# Port for local debugging
+PORT=3007
+
+# Security token for the default outgoing webhook
+SECURITY_TOKEN=
+
+# ID of the Outlook Connector
+CONNECTOR_ID=
+
+# Application Insights instrumentation key
+APPINSIGHTS_INSTRUMENTATIONKEY=
+
+# NGROK configuration for development
+# NGROK authentication token (leave empty for anonymous)
+NGROK_AUTH=
+# NGROK sub domain. ex "myapp" or  (leave empty for random)
+NGROK_SUBDOMAIN=
+# NGROK region. (us, eu, au, ap - default is us)
+NGROK_REGION=
+
+# Debug settings, default logging "msteams"
+DEBUG=msteams

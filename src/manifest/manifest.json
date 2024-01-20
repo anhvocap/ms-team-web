@@ -1,0 +1,81 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.13/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.13",
+  "id": "4cbf3e20-d44f-11ed-bf8e-8745488006f0",
+  "version": "1.0.1",
+  "packageName": "com.cubeet.msteambot",
+  "developer": {
+    "name": "voduyanh",
+    "websiteUrl": "https://5478-2001-ee0-4fc3-6380-4d21-dec3-6dd2-e4a5.ngrok.io",
+    "privacyUrl": "https://5478-2001-ee0-4fc3-6380-4d21-dec3-6dd2-e4a5.ngrok.io/privacy.html",
+    "termsOfUseUrl": "https://5478-2001-ee0-4fc3-6380-4d21-dec3-6dd2-e4a5.ngrok.io/tou.html"
+  },
+  "name": {
+    "short": "sso-team-bot",
+    "full": "sso-team-bot"
+  },
+  "description": {
+    "short": "TODO: add short description here",
+    "full": "TODO: add full description here"
+  },
+  "icons": {
+    "outline": "icon-outline.png",
+    "color": "icon-color.png"
+  },
+  "accentColor": "#D85028",
+  "configurableTabs": [],
+  "staticTabs": [
+    {
+      "entityId": "b04b1950-d44f-11ed-bf8e-8745488006f0",
+      "name": "sso team bot",
+      "contentUrl": "https://5478-2001-ee0-4fc3-6380-4d21-dec3-6dd2-e4a5.ngrok.io/Bot/ssoTeamBot.html",
+      "scopes": [
+        "personal"
+      ]
+    }
+  ],
+  "bots": [
+    {
+      "botId": "3922ee68-48b0-405d-8caf-9361078baa43",
+      "needsChannelSelector": true,
+      "isNotificationOnly": false,
+      "scopes": ["personal"],
+      "commandLists": [
+        {
+          "scopes": [
+            "personal"
+          ],
+          "commands": [
+            {
+              "title": "Help",
+              "description": "Shows help information"
+            },
+            {
+              "title": "Who am I?",
+              "description": "Shows information about your Teams user"
+            },
+            {
+              "title": "Mention me",
+              "description": "Let the bot @mention you"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "connectors": [],
+  "composeExtensions": [],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": [
+    "token.botframework.com"
+  ],
+  "webApplicationInfo": {
+    "id": "3922ee68-48b0-405d-8caf-9361078baa43",
+    "resource": "api://botid-3922ee68-48b0-405d-8caf-9361078baa43"
+  },
+  "showLoadingIndicator": false,
+  "isFullScreen": false
+}
